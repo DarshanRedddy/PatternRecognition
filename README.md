@@ -1,41 +1,66 @@
 # Kohonen Self-Organizing Map (SOM) - Circular Input Distribution
 
-This project implements a 1D Kohonen Self-Organizing Map (SOM) trained on a dataset of points sampled from **two concentric circles**.
+This project implements a 1D Kohonen Self-Organizing Map (SOM) trained on a dataset of points sampled from **two circular clusters**.
 
-It visualizes how the weight vectors evolve during training using a neighborhood function.
+It visualizes how the weight vectors evolve over training iterations using neighborhood-based competitive learning.
 
 ---
 
 ## 🔧 Features
 
-- Generate synthetic 2D data points from two circles.
-- Initialize weight vectors in a rectangular region.
-- Train a SOM with decreasing learning rate and neighborhood.
-- Visualize:
-  - Input distribution & initial weights
-  - Weight evolution over time (t = 0, 100, 1000)
-  - Neighbor connections
+- Generates 1000 data points from two circles.
+- Initializes 100 weight vectors in a 2D space.
+- Trains over 1000 steps with dynamic learning rate and neighborhood.
+- Plots:
+  - Initial weights and input samples
+  - Evolution at t = 0, 100, 1000
 
 ---
 
-## 📊 Output Images
+## 📊 Output Visualizations
 
-| Description | Output |
-|------------|--------|
-| Initial weights and input samples | ![t=0](outputs/turn_in_2_0.png) |
-| After 100 iterations | ![t=100](outputs/turn_in_3_100.png) |
-| After 1000 iterations | ![t=1000](outputs/turn_in_3_1000.png) |
+| Description | Image |
+|-------------|-------|
+| 🔵 Input samples + 🔴 Initial weights (Turn-in 2) | ![Initial](turn_in_2_0.png) |
+| 🔵 Input samples + 🔴 Initial weights (Turn-in 3) | ![t = 0](turn_in_3_0.png) |
+| 🔴 Weights after 100 iterations | ![t = 100](turn_in_3_100.png) |
+| 🔴 Weights after 1000 iterations | ![t = 1000](turn_in_3_1000.png) |
 
-> ℹ️ After downloading the PNG files from Google Colab, upload them to the `outputs/` folder in this repo and make sure to replace the paths above if needed.
+> 💡 Simply upload the `.png` images to the main directory of your GitHub repo (no subfolder needed). The above links will render them in the README.
 
 ---
 
 ## 🚀 How to Run on Google Colab
 
-1. Open the notebook or Python script in [Google Colab](https://colab.research.google.com/)
-2. Run the code cells.
-3. To download the output plots:
-
+1. Run the script in Google Colab to generate all 4 `.png` images.
+2. Use the following to download:
 ```python
 from google.colab import files
-files.download("outputs/turn_in_3_1000.png")  # Or use shutil to zip and download all
+files.download("turn_in_3_1000.png")  # or any other file
+To download all at once:
+
+python
+Copy
+Edit
+import shutil
+shutil.make_archive("images", 'zip', ".")
+files.download("images.zip")
+📁 Example Folder Structure
+Copy
+Edit
+kohonen_som_project/
+├── kohonen_som_training.py
+├── turn_in_2_0.png
+├── turn_in_3_0.png
+├── turn_in_3_100.png
+├── turn_in_3_1000.png
+├── README.md
+🧠 Concepts Used
+Kohonen Self-Organizing Maps (SOM)
+
+Competitive Learning & Topology Preservation
+
+Dynamic Learning Rate & Neighborhood Decay
+
+Data Visualization (matplotlib)
+
